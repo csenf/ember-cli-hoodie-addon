@@ -11,7 +11,7 @@
         "test": "ember test",
         "postinstall": "bower install"
     },
-    "repository": "https://github.com/stefanpenner/ember-cli",
+    "repository": "https://github.com/csenf/ember-cli-hoodie-addon",
     "engines": {
         "node": ">= 0.10.0"
     },
