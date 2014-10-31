@@ -1,3 +1,48 @@
-<h2 id='title'>Welcome to Ember.js</h2>
+{{#if flash}}
+<h2>{{flash}}</h2>
+{{/if}} {{#if accountService.hasValidSession}}
+<button {{action 'signOut'}}>
+    Sign Out
+</button>
 
-{{outlet}}
+<ul>
+    {{#each}}
+    <li>
+        {{text}} -
+        <button {{action 'destroyTodo' this}}>
+            destroy
+        </button>
+    </li>
+    {{else}}
+    <li>
+        No todos
+    </li>
+    {{/each}}
+</ul>
+
+<form {{action 'createTodo' on='submit' }}>
+    {{input value=text }}
+</form>
+{{else}}
+<div>
+    <div>
+        <label for="email">
+            Email
+        </label>
+        {{input value=user.email id="email"}}
+    </div>
+    <div>
+        <label for="password">
+            Password
+        </label>
+        {{input value=user.password id="password" type="password"}}
+    </div>
+    <button {{action 'signUp' user.email user.password}}>
+        Sign Up
+    </button>
+    <button {{action 'signIn' user.email user.password}}>
+        Sign In
+    </button>
+</div>
+{{/if}} {{outlet}}
+

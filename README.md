@@ -1,6 +1,6 @@
 # Ember-cli-hoodie-addon
 
-This README outlines the details of collaborating on this Ember addon.
+This Ember addon encapsulates a hoodie-store.
 
 ## Installation
 
