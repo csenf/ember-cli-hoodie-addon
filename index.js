@@ -7,7 +7,7 @@ module.exports = {
 
         app.import({
             development: app.bowerDirectory + '/hoodie/dist/hoodie.js',
-            production: app.bowerDirectory + 'hoodie/dist/hoodie.min.js'
+            production: app.bowerDirectory + '/hoodie/dist/hoodie.min.js'
         });
 
         // Use vendor version instead of bower so we can make our custom modifications
