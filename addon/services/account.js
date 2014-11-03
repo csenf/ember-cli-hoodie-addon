@@ -27,7 +27,7 @@ default Ember.Object.extend({
             auth.set('user', user);
         });
 
-        hoodie.account.on('unauthenticated', function (user) {
+        hoodie.account.on('unauthenticated signout', function (user) {
             auth.set('hasValidSession', false);
             auth.set('user', user);
         });
