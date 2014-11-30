@@ -12,29 +12,30 @@ default Ember.Object.extend({
     hasValidSession: false,
 
     initializeListeners: function () {
-        Ember.run.next(this, function () {
-            this._setSession();
-        });
-
-        Ember.run.later(this, function () {
-            this._setSession();
-        }, 10);
-
         var auth = this;
 
         hoodie.account.on('authenticated signin signup', function (user) {
-            auth.set('hasValidSession', true);
-            auth.set('user', user);
+            auth.updateSession();
         });
 
         hoodie.account.on('unauthenticated signout', function (user) {
-            auth.set('hasValidSession', false);
-            auth.set('user', user);
+            auth.updateSession();
         });
+
+        this.updateSession();
     }.on('init'),
 
-    _setSession: function () {
-        this.set('hasValidSession', hoodie.account.hasValidSession());
+    updateSession: function () {
+        var user;
+
+        if (hoodie.account.hasAccount()) {
+            user = {
+                email: hoodie.account.username
+            }
+        }
+
+        this.set('hasValidSession', hoodie.account.hasAccount());
+        this.set('user', user);
     },
 
     signIn: function (username, password) {
