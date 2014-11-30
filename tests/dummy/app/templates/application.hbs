@@ -1,6 +1,7 @@
 {{#if flash}}
 <h2>{{flash}}</h2>
 {{/if}} {{#if accountService.hasValidSession}}
+<p>User: {{accountService.user.email}}</p>
 <button {{action 'signOut'}}>
     Sign Out
 </button>
