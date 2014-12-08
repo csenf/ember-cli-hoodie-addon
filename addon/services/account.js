@@ -14,11 +14,11 @@ default Ember.Object.extend({
     initializeListeners: function () {
         var auth = this;
 
-        hoodie.account.on('authenticated signin signup', function (user) {
+        hoodie.account.on('authenticated signin signup', function ( /*user*/ ) {
             auth.updateSession();
         });
 
-        hoodie.account.on('unauthenticated signout', function (user) {
+        hoodie.account.on('unauthenticated signout', function ( /*user*/ ) {
             auth.updateSession();
         });
 
@@ -31,7 +31,7 @@ default Ember.Object.extend({
         if (hoodie.account.hasAccount()) {
             user = {
                 email: hoodie.account.username
-            }
+            };
         }
 
         this.set('hasValidSession', hoodie.account.hasAccount());
