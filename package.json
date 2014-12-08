@@ -1,6 +1,6 @@
 {
     "name": "ember-cli-hoodie-addon",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "directories": {
         "doc": "doc",
         "test": "tests"
@@ -10,7 +10,7 @@
         "build": "ember build",
         "test": "ember test"
     },
-    "repository": "",
+    "repository": "https://github.com/csenf/ember-cli-hoodie-addon",
     "engines": {
         "node": ">= 0.10.0"
     },
