@@ -26,6 +26,9 @@ module.exports = function (environment) {
         // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
         ENV.APP.LOG_VIEW_LOOKUPS = true;
         ENV.APP.hoodieURL = 'http://localhost:6001';
+        ENV.contentSecurityPolicy = {
+            'connect-src': "'self' http://localhost:6001"
+        }
     }
 
     if (environment === 'test') {
