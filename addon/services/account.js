@@ -18,7 +18,7 @@ default Ember.Object.extend({
             auth.updateSession();
         });
 
-        hoodie.account.on('unauthenticated signout', function ( /*user*/ ) {
+        hoodie.account.on('error:unauthenticated signout', function ( /*user*/ ) {
             auth.updateSession();
         });
 

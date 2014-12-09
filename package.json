@@ -1,6 +1,6 @@
 {
     "name": "ember-cli-hoodie-addon",
-    "version": "0.2.3",
+    "version": "0.2.5",
     "directories": {
         "doc": "doc",
         "test": "tests"
